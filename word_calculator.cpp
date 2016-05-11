@@ -13,7 +13,6 @@ string numbers_word_multidigit = ["hundred", "thousand", "million", "billion"];
 int numbers_multidigit[100, 1000, 1000000, 1000000000];
 
 int main(){
-
   string firstNumber, secondNumber;
   int firstNumConverted, secondNumberConverted;
   int mathType;
@@ -149,8 +148,7 @@ string convertNumber(num){
   int number[12];
   string digitWord[12];
   string digitValue;
-  int lengthCount = 0
-  for(; num != 0; num /= 10, lengthCount++);
+  int lengthCount = 0 for(; num != 0; num /= 10, lengthCount++);
    
   for(int i = 0; i < lengthCount; i++)
   {
@@ -165,8 +163,8 @@ string convertNumber(num){
       finalWord = numbers_word_singleDigit[(num - 11)];
     else
       finalWord = numbers_word_singleDigit[num - 1];
-      
   }
+  
   else
     for(int j = 0; j < number.size(); j++)
     {
@@ -205,6 +203,7 @@ string convertNumber(num){
         finalWord += digitWord[k];
       }
     }
+    
     return finalWord;
 }
 
