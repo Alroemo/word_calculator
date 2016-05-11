@@ -173,8 +173,15 @@ string convertNumber(num){
         if(k == 0 || k == 3 || k == 6|| k== 9)
           digitWord[k] = digitWord[k] + " hundred";
         if(k == 1 || k == 4 || k == 7 || k == 10)
-          int convertedNum = convertDigit(digitWord[k]);
-          digitWord[k] = 
+        {
+          if(digitWord[k] == "one")
+            digitWord[k] = "ten";
+          else{
+            int convertedNum = convertDigit(digitWord[k]);
+            digitWord[k] = numbers_word_doubleDigit[convertedNum - 1];
+          }
+        }
+        
       }
     }
 }
