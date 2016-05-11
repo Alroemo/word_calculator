@@ -1,0 +1,68 @@
+# include<iostream>
+
+using namespace std;
+sstring numbers_words_singledigit = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+int numbers_singledigit = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+string numbers_words_teendigit = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eightteen", "nineteen"];
+int numbers_teendigit =[11, 12, 13, 14, 15, 16, 17, 18, 19};
+string numbers_words_doubledigit = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+int numbers_doubledigit = [20, 30, 40, 50, 60, 70, 80, 90];
+string numbers_word_multidigit = ["hundred", "thousand", "million", "billion"];
+int numbers_multidigit[100, 1000, 100000000, 100000000000];
+
+int main(){
+
+  string firstNumber, secondNumber;
+  int firstNumConverted, secondNumberConverted;
+  int result;
+  string finalProduct;
+  
+  cout<<"Enter first number: ";
+  getline(cin, firstNumber);
+  
+  return 0;
+}
+
+int convertNumber(word_number){
+  istringstream word(word_number);
+  int result;
+  for(int i = 0; i < 10; i++)
+  {
+  }
+  return result;
+}
+
+int convertDigit(word){
+  int foundDigit = 0;
+  bool checkedSingle;
+  bool checkedTeen;
+  bool checkedDouble;
+  bool checkedMulti;
+  // 1 = single 10 = teen 11 = double 111 = multi 0 = no results
+  
+  for(int i = 0; i < numbers_words_singledigit.size(); i++)
+  {
+    int location;
+    if(word == numbers_words_singledigit[i])
+    {
+      location = i;
+      foundDigit = 1;
+    }
+  }
+  
+  if(foundDigit == 0)
+  {
+    for(int i = 0; i < numbers_words_singledigit.size(); i++)
+    {
+      int location;
+      if(word == numbers_words_singledigit[i])
+      {
+        location = i;
+        foundDigit = 1;
+      }
+    }
+  }
+
+  
+}
+
