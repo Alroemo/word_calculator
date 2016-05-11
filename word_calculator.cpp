@@ -30,14 +30,29 @@ int main(){
   secondNumConverted = convertNumber(secondeNumber);
   
   if(mathType == 1)
-   result = firstNumConverted + secondNumConverted;
+  {
+    result = firstNumConverted + secondNumConverted;
+    finalProduct = convertNumber(result);
+    cout<<firstNumber << " Plus "<<secondNumber<<" equals "<<finalProduct<<endl; 
+  }
   else if(mathType == 2)
-   result = firstNumConverted - secondNumConverted;
+  {
+    result = firstNumConverted - secondNumConverted;
+    finalProduct = convertNumber(result);
+    cout<<firstNumber << " minus "<<secondNumber<<" equals "<<finalProduct<<endl; 
+  }
   else if(mathType == 3)
-   result = firstNumConverted * secondNumConverted;
+  {
+    result = firstNumConverted * secondNumConverted;
+    finalProduct = convertNumber(result);
+    cout<<firstNumber << " times "<<secondNumber<<" equals "<<finalProduct<<endl; 
+  }
   else if(mathType == 4)
-   result = firstNumConverted / secondNumConverted; 
-  
+  {
+    result = firstNumConverted / secondNumConverted;
+    finalProduct = convertNumber(result);
+    cout<<firstNumber << " divided by "<<secondNumber<<" equals "<<finalProduct<<endl; 
+  }
   return 0;
 }
 
@@ -181,8 +196,15 @@ string convertNumber(num){
             digitWord[k] = numbers_word_doubleDigit[convertedNum - 1];
           }
         }
-        
+        if(k == 2 && k != "")
+          digitWord[k] += "billion";
+        if(k == 5 && k != "")
+          digitWord[k] += "million";
+        if(k == 8 && k != "")
+          digitWord[k] += "thousand";
+        finalWord += digitWord[k];
       }
     }
+    return finalWord;
 }
 
