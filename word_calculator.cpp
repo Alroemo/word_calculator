@@ -151,16 +151,14 @@ string convertNumber(num){
   int lengthCount = 0 for(; num != 0; num /= 10, lengthCount++);
    
   for(int i = 0; i < lengthCount; i++)
-  {
-    number[12-i] = num - (num/(pow(10,(i +1))));
-  }
+  {   number[12-i] = num - (num/pow(10,i +1));  }
   
   if(num <= 19)
   {
     if(num == 10)
       finalWord = "ten";
     else if(num >= 11 && num <= 19)
-      finalWord = numbers_word_singleDigit[(num - 11)];
+      finalWord = numbers_word_singleDigit[num - 11];
     else
       finalWord = numbers_word_singleDigit[num - 1];
   }
@@ -172,7 +170,7 @@ string convertNumber(num){
       if(number[j] == 0)
         continue;
       else if(number[j] != 0)
-        digitWord[j] = numbers_words_singleDigit[(number[j]-1)];
+        digitWord[j] = numbers_words_singleDigit[number[j]-1];
       else
         digitWord[i] = "";
     }
@@ -180,9 +178,9 @@ string convertNumber(num){
     {
       if(digitWord[k] == "" && finalWord == NULL)
         continue;
+        
       else
       {
-        substring currentWord;
         if(k == 0 || k == 3 || k == 6|| k== 9)
           digitWord[k] = digitWord[k] + " hundred";
         if(k == 1 || k == 4 || k == 7 || k == 10)
@@ -206,4 +204,5 @@ string convertNumber(num){
     
     return finalWord;
 }
+
 
